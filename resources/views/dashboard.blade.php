@@ -1,15 +1,11 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@extends('layouts.main')
+@include('components.navbar_pradinis')
+@section('content')
+<h2 style=text-align:center>Sveiki prisijungę į statybų įmonės puslapį</h2> <br>
+<h4 style=font-weight:bold> Kokias paslaugas teikia ši statybų įmonė?</h4>
+<p>Ši statybų įmonė teikia tokias paslaugas kaip, šildomų grindų montavimas,<br>
+katilų ir kitų prietaisų montavimas, bei lauko darbus, tokiu kaip tvorų montavimas.</p>
+<img src="{{ asset('images/statyboss.jpg') }}" alt="description of myimage" width="80%" style="padding-left: 300px;">
+@include('components.footer')
+  </footer>
+@endsection

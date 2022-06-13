@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('laikas', function (Blueprint $table) {
             $table->id();
             $table->string('diena');
-            $table->string('Darbo_laikas');
+            $table->string('valandos');
             $table->timestamps();
         });
     }

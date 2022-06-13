@@ -8,7 +8,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {{-- Pradinis puslapis --}}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Pradinis</a>
+            <a class="nav-link active" aria-current="page" href="/pradinis">Pradinis</a>
           </li>
           {{-- Paslaugos navbar --}}
           <li class="nav-item dropdown">
@@ -16,23 +16,15 @@
                 Paslaugos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               @if(Auth::user()->role_id==2)
               <li><a class="dropdown-item" href="/paslaugos/add">Pridėjimas</a></li>
-              <li><a class="dropdown-item" href="/paslaugos">Redagavimas</a></li>
-            </ul>
-          </li>
-          {{-- Kainos navbar --}}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Kainos
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/paslaugos/add">Pridėjimas</a></li>
-              <li><a class="dropdown-item" href="/paslaugos">Redagavimas</a></li>
+               @endif
+              <li><a class="dropdown-item" href="/paslaugos">Paslaugos</a></li>
             </ul>
           </li>
           {{-- "Apie" puslapis --}}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Apie</a>
+            <a class="nav-link active" aria-current="page" href="/apie">Apie</a>
           </li>
         </ul>
         <form class="d-flex" action="/paslaugos/search" method="get">

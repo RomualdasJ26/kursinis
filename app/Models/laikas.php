@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class laikas extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'diena',
+        'valandos'
+    ];
 }

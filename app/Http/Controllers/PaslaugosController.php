@@ -30,7 +30,7 @@ class PaslaugosController extends Controller
             'description' => request('description')
         ]);
 
-        return redirect('/');
+        return redirect('/pradinis');
     }
     public function editServices($id){
         $paslauga = paslaugos::where('id', $id)->firstOrFail();
@@ -47,7 +47,7 @@ class PaslaugosController extends Controller
         $paslauga->description = request('description');
         $paslauga->save();
 
-        return redirect('/');
+        return redirect('/pradinis');
     }
     public function askDelete($id){
         $paslauga = paslaugos::where('id', $id)->firstOrFail();
@@ -57,7 +57,7 @@ class PaslaugosController extends Controller
         $paslauga = paslaugos::where('id', $id)->firstOrFail();
         $paslauga-> delete();
 
-        return redirect('/');
+        return redirect('/pradinis');
     }
     public function search(){
         $paslaugos = paslaugos::where('name', 'LIKE', '%'.$_GET['query'].'%')->get();
